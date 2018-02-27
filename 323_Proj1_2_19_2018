@@ -115,6 +115,21 @@ int main() {
             else if (is_op(p, operators)){}
             else if (is_sep(p, separators)){}
             else if (((*p)==32) || (*p=='\t')){++p;}
+            else if (*p == '!')  // ignoring the comments
+			{
+				++p;
+				while (*p != '!')
+				{
+					if (p != &x[x.length()])
+						++p;
+					else
+					{
+						getline(fin, x);
+						p = &x[0];
+					}
+				}
+				++p;
+			}
             else{
                 cout << "unknown\t" << *p << endl;;
                 p++;
