@@ -3,7 +3,7 @@
 #include <fstream>
 using namespace std;
 
-// hello
+
 void m_id_key(char *&p, string * keyword){
     bool check_keyword = false;
     string word = "";
